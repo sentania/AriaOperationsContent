@@ -1,0 +1,110 @@
+{
+   "76801377-1807-4a46-93d4-9b9dc0f0c54b": {
+      "resourceKinds": [{
+         "resourceKindKey": "LICENSE_USAGE_WORLD",
+         "adapterKindKey": "VMWARE_INFRA_HEALTH"
+      }],
+      "modificationTime": 1738859109616,
+      "name": "[VCF Consumption Overview v2] VCF Total License Usage",
+      "formula": "sum(${adaptertype=VMWARE_INFRA_HEALTH, objecttype=LicenseUsage, metric=Assets|TotalUsage, depth=10, where=\"ProductId startsWith vSphere 8 Enterprise Plus for VCF\"})",
+      "description": "Filter and Summarize total vSAN License Usage",
+      "unitId": "",
+      "modifiedBy": "c60c3223-7fad-407f-9939-0fc45817233c"
+   },
+   "b8661772-e1c3-4020-b255-b6da7fbdba83": {
+      "resourceKinds": [{
+         "resourceKindKey": "CAS World",
+         "adapterKindKey": "CASAdapter"
+      }],
+      "modificationTime": 1738876612609,
+      "name": "[VCF Consumption Overview v2] Automation Host Count",
+      "formula": "count(${adaptertype=VMWARE, objecttype=HostSystem, attribute=config|name, depth=10})",
+      "description": "",
+      "unitId": "",
+      "modifiedBy": "c60c3223-7fad-407f-9939-0fc45817233c"
+   },
+   "ffdafb8e-3c04-4eee-9f33-1096328a6ee3": {
+      "resourceKinds": [{
+         "resourceKindKey": "LICENSE_USAGE_WORLD",
+         "adapterKindKey": "VMWARE_INFRA_HEALTH"
+      }],
+      "modificationTime": 1738859055308,
+      "name": "[VCF Consumption Overview v2] vSAN Total License Usage",
+      "formula": "sum(${adaptertype=VMWARE_INFRA_HEALTH, objecttype=LicenseUsage, metric=Assets|TotalUsage, depth=10, where=\"ProductId startsWith vSAN\"})",
+      "description": "Filter and Summarize total vSAN License Usage",
+      "unitId": "",
+      "modifiedBy": "c60c3223-7fad-407f-9939-0fc45817233c"
+   },
+   "dc0b1bc5-478a-4be9-8442-6afa8fb4b4f8": {
+      "resourceKinds": [{
+         "resourceKindKey": "LICENSE_USAGE_WORLD",
+         "adapterKindKey": "VMWARE_INFRA_HEALTH"
+      }],
+      "modificationTime": 1738859244288,
+      "name": "[VCF Consumption Overview v2] VCF Total License Usage Percent",
+      "formula": "(sum(${adaptertype=VMWARE_INFRA_HEALTH, objecttype=LicenseUsage, metric=Assets|TotalUsage, depth=10, where=\"ProductId startsWith vSphere 8 Enterprise Plus for VCF\"}) / sum(${adaptertype=VMWARE_INFRA_HEALTH, objecttype=LicenseUsage, metric=CostUnitAttributes|CostUnitLimit, depth=10, where=\"ProductId startsWith vSphere 8 Enterprise Plus for VCF\"}) ) * 100",
+      "description": "",
+      "unitId": "percent",
+      "modifiedBy": "c60c3223-7fad-407f-9939-0fc45817233c"
+   },
+   "b907e551-0425-418c-90fc-c3132aefd7f0": {
+      "resourceKinds": [{
+         "resourceKindKey": "LICENSE_USAGE_WORLD",
+         "adapterKindKey": "VMWARE_INFRA_HEALTH"
+      }],
+      "modificationTime": 1738880069918,
+      "name": "[VCF Consumption Overview v2]  vSAN Total License Usage Percent",
+      "formula": "(sum(${adaptertype=VMWARE_INFRA_HEALTH, objecttype=LicenseUsage, metric=Assets|TotalUsage, depth=10, where=\"ProductId startsWith vSAN\"}) / sum(${adaptertype=VMWARE_INFRA_HEALTH, objecttype=LicenseUsage, metric=CostUnitAttributes|CostUnitLimit, depth=10, where=\"ProductId startsWith vSAN\"})) *100",
+      "description": "",
+      "unitId": "percent",
+      "modifiedBy": "c60c3223-7fad-407f-9939-0fc45817233c"
+   },
+   "52b1e5d9-3598-4f14-8c23-76b082b2c088": {
+      "resourceKinds": [{
+         "resourceKindKey": "NSXT World",
+         "adapterKindKey": "NSXTAdapter"
+      }],
+      "modificationTime": 1738875437734,
+      "name": "[VCF Consumption Overview v2] Host Transport Node Count",
+      "formula": "count(${adaptertype=NSXTAdapter, objecttype=TransportNode, metric=summary|NodeType, depth=10, where= \"summary|nodetype startsWith HostNode\"})",
+      "description": "",
+      "unitId": "",
+      "modifiedBy": "c60c3223-7fad-407f-9939-0fc45817233c"
+   },
+   "7f06f105-c64b-45a3-accd-852c74515df5": {
+      "resourceKinds": [{
+         "resourceKindKey": "vSphere World",
+         "adapterKindKey": "VMWARE"
+      }],
+      "modificationTime": 1738858423113,
+      "name": "[VCF Consumption Overview v2]License Waste Count",
+      "formula": "${this, metric=Super Metric|sm_3b4464fc-5dbc-4344-ba8e-e243818df6c6} - ${this, metric=cpu|corecount_provisioned}",
+      "description": "The number of core licences \"wasted\" due to system with core count smaller then 16 per socket",
+      "unitId": "",
+      "modifiedBy": "c60c3223-7fad-407f-9939-0fc45817233c"
+   },
+   "ad810afa-73c8-412e-a05a-1ba59da79a32": {
+      "resourceKinds": [{
+         "resourceKindKey": "LICENSE_USAGE_WORLD",
+         "adapterKindKey": "VMWARE_INFRA_HEALTH"
+      }],
+      "modificationTime": 1738858431770,
+      "name": "[VCF Consumption Overview v2] VCF Total License Count",
+      "formula": "sum(${adaptertype=VMWARE_INFRA_HEALTH, objecttype=LicenseUsage, metric=CostUnitAttributes|CostUnitLimit, depth=10, where=\"ProductId startsWith vSphere 8 Enterprise Plus for VCF\"})",
+      "description": "Filter for all VCF licenses and total the capacity of them.",
+      "unitId": "",
+      "modifiedBy": "c60c3223-7fad-407f-9939-0fc45817233c"
+   },
+   "6e8310ed-1753-45a4-aacc-7f1025c03d11": {
+      "resourceKinds": [{
+         "resourceKindKey": "LICENSE_USAGE_WORLD",
+         "adapterKindKey": "VMWARE_INFRA_HEALTH"
+      }],
+      "modificationTime": 1738858401447,
+      "name": "[VCF Consumption Overview v2] vSAN Total License Capacity",
+      "formula": "sum(${adaptertype=VMWARE_INFRA_HEALTH, objecttype=LicenseUsage, metric=CostUnitAttributes|CostUnitLimit, depth=10, where=\"ProductId startsWith vSAN\"})",
+      "description": "Filter and Summarize total vSAN License Capacity",
+      "unitId": "",
+      "modifiedBy": "c60c3223-7fad-407f-9939-0fc45817233c"
+   }
+}
