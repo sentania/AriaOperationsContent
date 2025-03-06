@@ -1,0 +1,12 @@
+{"8a009683-a4fe-4b6f-a80d-9d0de6926ae0": {
+   "resourceKinds": [{
+      "resourceKindKey": "VirtualMachine",
+      "adapterKindKey": "VMWARE"
+   }],
+   "modificationTime": 1741299419655,
+   "name": "[Custom] VM Encryption Status",
+   "formula": "(count(${this, attribute=virtualDisk|encryptionStatus, where = \"startsWith False\", depth=2})) > 0 ? 0 : 1",
+   "description": "Look at all child virtual disks of a VM and determine if it's fully encrypted or not",
+   "unitId": "",
+   "modifiedBy": "c60c3223-7fad-407f-9939-0fc45817233c"
+}}
