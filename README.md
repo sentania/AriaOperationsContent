@@ -12,6 +12,10 @@ This is a repo of dashbaords I have either created or found and incorporated int
 
     * A powerful dashboard and handful of supermetrics to display the license consumption of VCF, NSX, Automation for all connected vCenter instances.  This dashboard derives all information from the captured licensing metrics from vCenter
 
+* VM Encryption Reporting
+    
+    * A WIP dashboard aimed at helping understand the status of VMs that are or are not encrypted
+
 * VM Rightsize Justification
 
     * This dashboard is aimed at helping provide insight into clean up opportunities with a gloabal view, versus the datacenter centric view by default.  It's primary goal is to provide supporting evidence about why a given resource should be rightsized.

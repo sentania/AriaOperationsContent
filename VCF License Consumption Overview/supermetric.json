@@ -35,6 +35,18 @@
       "unitId": "",
       "modifiedBy": "c60c3223-7fad-407f-9939-0fc45817233c"
    },
+   "70cb8167-ec3d-4e52-b0cc-08ca191d25b8": {
+      "resourceKinds": [{
+         "resourceKindKey": "CAS World",
+         "adapterKindKey": "CASAdapter"
+      }],
+      "modificationTime": 1739855429444,
+      "name": "[VCF Consumption Overview v2] Automation License Count",
+      "formula": "sum(${adaptertype=VMWARE, objecttype=HostSystem, metric=Super Metric|sm_5ea91f64-b7e9-4a77-baa7-1e8ebea1e322, depth=10})",
+      "description": "",
+      "unitId": "",
+      "modifiedBy": "c60c3223-7fad-407f-9939-0fc45817233c"
+   },
    "dc0b1bc5-478a-4be9-8442-6afa8fb4b4f8": {
       "resourceKinds": [{
          "resourceKindKey": "LICENSE_USAGE_WORLD",
@@ -59,6 +71,18 @@
       "unitId": "percent",
       "modifiedBy": "c60c3223-7fad-407f-9939-0fc45817233c"
    },
+   "fb06a31b-a213-4613-ad74-bad3058c0176": {
+      "resourceKinds": [{
+         "resourceKindKey": "NSXT World",
+         "adapterKindKey": "NSXTAdapter"
+      }],
+      "modificationTime": 1739460878546,
+      "name": "[VCF Consumption Overview v2] Host Transport Node Core Count",
+      "formula": "count(${adaptertype=NSXTAdapter, objecttype=TransportNode, metric=summary|NodeType, depth=10, where= \"summary|nodetype startsWith HostNode\"})",
+      "description": "",
+      "unitId": "",
+      "modifiedBy": "c60c3223-7fad-407f-9939-0fc45817233c"
+   },
    "52b1e5d9-3598-4f14-8c23-76b082b2c088": {
       "resourceKinds": [{
          "resourceKindKey": "NSXT World",
@@ -71,13 +95,25 @@
       "unitId": "",
       "modifiedBy": "c60c3223-7fad-407f-9939-0fc45817233c"
    },
+   "bd174fd5-7cfe-4746-bfcd-436f81a94e50": {
+      "resourceKinds": [{
+         "resourceKindKey": "NSXT World",
+         "adapterKindKey": "NSXTAdapter"
+      }],
+      "modificationTime": 1739853628770,
+      "name": "[VCF Consumption Overview v2] NSX License Count",
+      "formula": "sum(${adaptertype=VMWARE, objecttype=HostSystem, metric=Super Metric|sm_5ea91f64-b7e9-4a77-baa7-1e8ebea1e322, depth=10})",
+      "description": "",
+      "unitId": "",
+      "modifiedBy": "c60c3223-7fad-407f-9939-0fc45817233c"
+   },
    "7f06f105-c64b-45a3-accd-852c74515df5": {
       "resourceKinds": [{
          "resourceKindKey": "vSphere World",
          "adapterKindKey": "VMWARE"
       }],
-      "modificationTime": 1738858423113,
-      "name": "[VCF Consumption Overview v2]License Waste Count",
+      "modificationTime": 1741370029544,
+      "name": "[VCF Consumption Overview v2]VCF License Potential Cores",
       "formula": "${this, metric=Super Metric|sm_3b4464fc-5dbc-4344-ba8e-e243818df6c6} - ${this, metric=cpu|corecount_provisioned}",
       "description": "The number of core licences \"wasted\" due to system with core count smaller then 16 per socket",
       "unitId": "",
