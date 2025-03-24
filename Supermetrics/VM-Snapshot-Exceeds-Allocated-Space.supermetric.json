@@ -1,0 +1,12 @@
+{"fe9d28a7-e971-4ff5-aa62-a1c8e7b6c386": {
+   "resourceKinds": [{
+      "resourceKindKey": "VirtualMachine",
+      "adapterKindKey": "VMWARE"
+   }],
+   "modificationTime": 1742828061216,
+   "name": "[Custom] VM Snapshot Exceeds Allocated Space",
+   "formula": "${this, metric=diskspace|snapshot} >${this, metric=config|hardware|diskSpace}",
+   "description": "",
+   "unitId": "",
+   "modifiedBy": "c60c3223-7fad-407f-9939-0fc45817233c"
+}}
