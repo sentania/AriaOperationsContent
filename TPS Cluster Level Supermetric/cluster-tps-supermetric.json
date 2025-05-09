@@ -1,0 +1,12 @@
+{"16c8ab76-d785-4214-a941-c82bc3bf22f4": {
+   "resourceKinds": [{
+      "resourceKindKey": "ClusterComputeResource",
+      "adapterKindKey": "VMWARE"
+   }],
+   "modificationTime": 1746758717109,
+   "name": "[Custom] TPS Shared Memory",
+   "formula": "sum(${adaptertype=VMWARE, objecttype=HostSystem, metric=mem|shared_average, depth=1})",
+   "description": "Shared memory of all child host objects",
+   "unitId": "",
+   "modifiedBy": "c60c3223-7fad-407f-9939-0fc45817233c"
+}}
