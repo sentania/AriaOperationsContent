@@ -1,0 +1,26 @@
+{
+   "3340f99b-b4e1-4719-b179-bdda395a66f5": {
+      "resourceKinds": [{
+         "resourceKindKey": "ClusterComputeResource",
+         "adapterKindKey": "VMWARE"
+      }],
+      "modificationTime": 1752608175037,
+      "name": "[Custom] Cluster Host Maintenance Mode Count",
+      "formula": "count(${adaptertype=VMWARE, objecttype=HostSystem, metric=runtime|maintenanceState, depth=1, where = \"startsWith inMaintenance\"})",
+      "description": "",
+      "unitId": "",
+      "modifiedBy": "c60c3223-7fad-407f-9939-0fc45817233c"
+   },
+   "9a16a77a-206d-4ee9-bcaf-0e1de7abb9ca": {
+      "resourceKinds": [{
+         "resourceKindKey": "HostSystem",
+         "adapterKindKey": "VMWARE"
+      }],
+      "modificationTime": 1752609784865,
+      "name": "[Custom] Host VM Load Double Expected Amount",
+      "formula": "(min(${adaptertype=VMWARE, objecttype=ClusterComputeResource, metric=summary|total_number_hosts, depth=-1}) == 2) && (min(${adaptertype=VMWARE, objecttype=ClusterComputeResource, metric=Super Metric|sm_3340f99b-b4e1-4719-b179-bdda395a66f5, depth=-1}) >0 ) ? 0: ((min(${adaptertype=VMWARE, objecttype=ClusterComputeResource, metric=summary|vm_count_per_host, depth=-1}) * 2) <  ${this, metric=summary|number_running_vms})",
+      "description": "",
+      "unitId": "",
+      "modifiedBy": "c60c3223-7fad-407f-9939-0fc45817233c"
+   }
+}
