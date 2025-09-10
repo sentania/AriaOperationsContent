@@ -1,0 +1,38 @@
+{
+   "d69b0b58-0c39-4462-bb1a-664956b15fce": {
+      "resourceKinds": [{
+         "resourceKindKey": "ClusterComputeResource",
+         "adapterKindKey": "VMWARE"
+      }],
+      "modificationTime": 1757010867925,
+      "name": "[Custom] vSphere CPU HA N-x Value",
+      "formula": "(${this, metric=configuration|dasConfig|cpuFailoverPercent} * ${this, metric=summary|total_number_hosts} ) /100",
+      "description": "Calculate the vSphere HA Failover Host Count",
+      "unitId": "",
+      "modifiedBy": "c07358ce-55bf-41c4-8fbe-d0c38d3b7367"
+   },
+   "90387c88-5ced-418c-9054-d6e3d7e7ba94": {
+      "resourceKinds": [{
+         "resourceKindKey": "ClusterComputeResource",
+         "adapterKindKey": "VMWARE"
+      }],
+      "modificationTime": 1757511553285,
+      "name": "[Custom] vSphere HA N-x CPU and Memory Match",
+      "formula": "(${this, metric=Super Metric|sm_d69b0b58-0c39-4462-bb1a-664956b15fce}==${this, metric=Super Metric|sm_387571a5-bea4-40a3-b39f-73f9919253fe})",
+      "description": "",
+      "unitId": "",
+      "modifiedBy": "c07358ce-55bf-41c4-8fbe-d0c38d3b7367"
+   },
+   "387571a5-bea4-40a3-b39f-73f9919253fe": {
+      "resourceKinds": [{
+         "resourceKindKey": "ClusterComputeResource",
+         "adapterKindKey": "VMWARE"
+      }],
+      "modificationTime": 1757010943965,
+      "name": "[Custom] vSphere Memory HA N-x Value",
+      "formula": "( ${this, metric=configuration|dasConfig|memFailoverPercent} * ${this, metric=summary|total_number_hosts} ) /100",
+      "description": "Calculate the vSphere HA Failover Host Count",
+      "unitId": "",
+      "modifiedBy": "c07358ce-55bf-41c4-8fbe-d0c38d3b7367"
+   }
+}
